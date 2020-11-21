@@ -28,7 +28,7 @@ const transporter = nodemailer.createTransport({
 const sendMail = (name, email, subject, text, cb) => {
     const mailOptions = {
         sender: name,
-        from: email,
+        from: process.env.FROM_EMAIL,
         to: process.env.TO_EMAIL,
         subject: subject,
         text: ` From: ${name}.\n Reply to: ${email}.\n Message:\n ${text} `
@@ -36,6 +36,7 @@ const sendMail = (name, email, subject, text, cb) => {
 
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
+            console.log(err);
             cb(err, null);
         } else {
             cb(null, data);
