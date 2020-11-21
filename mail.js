@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 // });
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: process.env.EMAIL_SERVICE,
     auth: {
         user: process.env.FROM_EMAIL,
         pass: process.env.FROM_PASS
