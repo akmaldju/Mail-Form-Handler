@@ -3,7 +3,7 @@ const sendMail = require('./mail');
 const log = console.log;
 const app = express();
 const path = require('path');
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 
 // Configuring our data parsing
 app.use(express.urlencoded({
