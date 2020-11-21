@@ -8,12 +8,20 @@ if (process.env.NODE_ENV !== 'production') {
 // Only needed if you don't have a real mail account for testing
 //let testAccount = await nodemailer.createTestAccount();
 
+// const transporter = nodemailer.createTransport({
+//     host: 'smtp.ethereal.email',
+//     port: 587,
+//     auth: {
+//         user: process.env.FROM_EMAIL || testAccount?.user,
+//         pass: process.env.FROM_PASS || testAccount?.pass
+//     }
+// });
+
 const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
+    service: 'gmail',
     auth: {
-        user: process.env.FROM_EMAIL || testAccount?.user,
-        pass: process.env.FROM_PASS || testAccount?.pass
+        user: process.env.FROM_EMAIL,
+        pass: process.env.FROM_PASS
     }
 });
 
@@ -27,6 +35,8 @@ const sendMail = (name, email, subject, text, cb) => {
     };
 
     transporter.sendMail(mailOptions, function (err, data) {
+        console.log(err);
+        console.log(data);
         if (err) {
             cb(err, null);
         } else {
