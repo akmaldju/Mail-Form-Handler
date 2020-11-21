@@ -31,7 +31,7 @@ const sendMail = (name, email, subject, text, cb) => {
         from: email,
         to: process.env.TO_EMAIL,
         subject: subject,
-        text: text
+        text: ` From: ${name}.\n Reply to: ${email}.\n Message:\n ${text} `
     };
 
     transporter.sendMail(mailOptions, function (err, data) {
