@@ -21,7 +21,7 @@ app.post('/email', (req, res) => {
         if (err) {
             res.status(500).json({ message: err });
         } else {
-            res.status({ message: 'Email sent!!!' });
+            res.status(200).send({ message: 'Email sent successfully!' });
         }
     });
 });
