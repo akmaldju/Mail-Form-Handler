@@ -11,17 +11,21 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akmaldju/mail-form-handler.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Akmal Djumakhodjaev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/akmaldju/mail-form-handler/issues"
   },
-  "homepage": "https://github.com/akmaldju/mail-form-handler#readme"
+  "homepage": "https://github.com/akmaldju/mail-form-handler#readme",
+  "engines": {
+    "node": "14.x"
+  }
 }
