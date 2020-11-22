@@ -2,6 +2,7 @@ const express = require('express');
 const sendMail = require('./mail');
 const log = console.log;
 const app = express();
+const cors = require('cors');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
@@ -10,6 +11,7 @@ app.use(express.urlencoded({
     extend: false
 }));
 app.use(express.json());
+app.use(cors()); 
 
 app.post('/email', (req, res) => {
     // res.sendFile(path.join(__dirname + '/contact-us.html'));
@@ -21,7 +23,7 @@ app.post('/email', (req, res) => {
         if (err) {
             res.status(500).json({ message: err });
         } else {
-            res.status(200).send({ message: 'Email sent successfully!' });
+            res.status(200).json({ message: 'Email sent successfully!' });
         }
     });
 });
