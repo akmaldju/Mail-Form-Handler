@@ -9,7 +9,7 @@ This project is the simplest Node.js solution that aims to serve as a Backend AP
 The steps to deploy this solution and use it for your website are dead simple:
 
 1.  Deploy the current repo on any Node.js hosting (no extra code changes or settings required).
- - Free hostings that you might consider are: Heroku and Glitch.
+ - Free hostings that you might consider are: [Heroku](https://heroku.com) and [Glitch](https://glitch.com).
     
 2.  Create `.env` file with your email credentials or directly add required environment variables to your production server as shown in `Integration` part of this guide.
 
@@ -30,3 +30,5 @@ To connect to your email server you will need to provide the following environme
     FROM_EMAIL=your-sender-email@email.com // this is your email that you will authenticate and use to redirect the messages to your destination email
     FROM_PASS=your-sender-email-password // depending on the email server you use, it might need to be generated separately for each application
     EMAIL_SERVICE=your-email-server // be default nodemailer will automatically find and use SMTP connection settings if the mail server is supported and known. In case if it's not known, you will need to provide SMTP connection settings by yourself.
+
+[List of well-know email services for Nodemailer](https://nodemailer.com/smtp/well-known/)
